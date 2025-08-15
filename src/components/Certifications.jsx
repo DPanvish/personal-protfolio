@@ -1,6 +1,12 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import deloitteImage from '../assets/Deloite.jpg'
+import apnaCollegeImage from '../assets/ApnaCollege.jpg'
+import metaFrontendImage from '../assets/MetaFrontend.jpg'
+import metaJavaScriptImage from '../assets/MetaJavaScript.jpg'
+import sihImage from '../assets/SIH.jpg'
+import siImage from '../assets/SI.jpg'
 
 const Certifications = () => {
   const sectionRef = useRef(null)
@@ -204,7 +210,7 @@ const Certifications = () => {
       date: "2024",
       description: "Completed comprehensive virtual job simulation covering technology consulting and digital transformation.",
       icon: "🏆",
-      image: "/src/assets/Deloite.jpg"
+      image: deloitteImage
     },
     {
       title: "ApnaCollege Sigma 5.0 Batch",
@@ -212,7 +218,7 @@ const Certifications = () => {
       date: "2024",
       description: "Student of ApnaCollege in Sigma 5.0 batch where I learnt core concepts of DSA, Web Development, Aptitude and Reasoning.",
       icon: "🎓",
-      image: "/src/assets/ApnaCollege.jpg"
+      image: apnaCollegeImage
     },
     {
       title: "Meta Frontend Development",
@@ -220,7 +226,7 @@ const Certifications = () => {
       date: "2024",
       description: "Learnt Frontend basics with hands-on experience. This was taught by the Meta staff.",
       icon: "📱",
-      image: "/src/assets/MetaFrontend.jpg"
+      image: metaFrontendImage
     },
     {
       title: "Meta JavaScript Programming",
@@ -228,7 +234,7 @@ const Certifications = () => {
       date: "2024",
       description: "Learnt core concepts of Programming in JavaScript and Jest. This was taught by the Meta.",
       icon: "📜",
-      image: "/src/assets/MetaJavaScript.jpg"
+      image: metaJavaScriptImage
     },
     {
       title: "Smart India Hackathon Participation",
@@ -236,7 +242,7 @@ const Certifications = () => {
       date: "2024",
       description: "Participated in Smart India Hackathon and tried to solve a problem statement on Travel & Tourism.",
       icon: "🚀",
-      image: "/src/assets/SIH.jpg"
+      image: sihImage
     },
     {
       title: "Smart Interviews Training",
@@ -244,7 +250,7 @@ const Certifications = () => {
       date: "2024",
       description: "I'm the student at Smart Interviews. Where I have learnt DSA and Problem Solving. I have Solved Many problems during the training.",
       icon: "🎯",
-      image: "/src/assets/SI.jpg"
+      image: siImage
     }
   ]
 

@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
+import profileImage from '../assets/Image.jpg'
 
 const Hero = () => {
   const nameRef = useRef(null)
@@ -151,7 +152,7 @@ const Hero = () => {
           <div className="relative group">
             <div className="w-40 h-40 md:w-48 md:h-48 lg:w-56 lg:h-56 rounded-full overflow-hidden border-4 border-purple-400/40 shadow-2xl group-hover:border-purple-400/80 transition-all duration-500">
               <img 
-                src="/src/assets/Image.jpg" 
+                src={profileImage} 
                 alt="Panvish Dowripilli" 
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
