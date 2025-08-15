@@ -128,9 +128,9 @@ const Hero = () => {
   }, [])
 
   const socialLinks = [
-    { name: 'GitHub', url: 'https://github.com', icon: '🔗' },
-    { name: 'LinkedIn', url: 'https://linkedin.com', icon: '💼' },
-    { name: 'LeetCode', url: 'https://leetcode.com', icon: '🧮' }
+    { name: 'GitHub', url: 'https://github.com/DPanvish', icon: '🔗' },
+    { name: 'LinkedIn', url: 'https://www.linkedin.com/in/d-panvish/', icon: '💼' },
+    { name: 'LeetCode', url: 'https://leetcode.com/u/Panvish/', icon: '🧮' }
   ]
 
   return (
