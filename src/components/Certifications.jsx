@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
+import { createPortal } from 'react-dom'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import deloitteImage from '../assets/Deloite.jpg'
@@ -6,7 +7,7 @@ import apnaCollegeImage from '../assets/ApnaCollege.jpg'
 import metaFrontendImage from '../assets/MetaFrontend.jpg'
 import metaJavaScriptImage from '../assets/MetaJavaScript.jpg'
 import sihImage from '../assets/SIH.jpg'
-import siImage from '../assets/SI.jpg'
+import siImage from '../assets/SI.png'
 
 const Certifications = () => {
   const sectionRef = useRef(null)
@@ -190,17 +191,24 @@ const Certifications = () => {
         card.removeEventListener('mouseenter', () => {})
         card.removeEventListener('mouseleave', () => {})
       })
+      // Cleanup: restore body scrolling
+      document.body.style.overflow = 'unset'
     }
   }, [])
 
   const handleViewCertificate = (cert) => {
+    console.log('Opening certificate:', cert.title, 'Image:', cert.image);
     setSelectedCertificate(cert)
     setIsModalOpen(true)
+    // Prevent body scrolling when modal is open
+    document.body.style.overflow = 'hidden'
   }
 
   const closeModal = () => {
     setIsModalOpen(false)
     setSelectedCertificate(null)
+    // Restore body scrolling when modal is closed
+    document.body.style.overflow = 'unset'
   }
 
   const certifications = [
@@ -342,10 +350,29 @@ const Certifications = () => {
          </div>
        </div>
 
-       {/* Certificate Modal */}
-       {isModalOpen && selectedCertificate && (
-         <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-           <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto border border-purple-500/20 shadow-2xl">
+               {/* Certificate Modal */}
+        {isModalOpen && selectedCertificate && createPortal(
+          <div 
+            className="fixed inset-0 bg-black/90 backdrop-blur-md flex items-center justify-center p-4" 
+            style={{ 
+              isolation: 'isolate',
+              zIndex: 999999,
+              position: 'fixed',
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0
+            }}
+            onClick={closeModal}
+          >
+            <div 
+              className="certificate-modal bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto border border-purple-500/20 shadow-2xl"
+              style={{
+                zIndex: 1000000,
+                position: 'relative'
+              }}
+              onClick={(e) => e.stopPropagation()}
+            >
              {/* Modal Header */}
              <div className="p-6 border-b border-slate-700/50">
                <div className="flex items-center justify-between">
@@ -371,15 +398,25 @@ const Certifications = () => {
                  {/* Certificate Image */}
                  <div className="space-y-4">
                    <h4 className="text-lg font-semibold text-white">Certificate</h4>
-                   <div className="relative overflow-hidden rounded-lg border border-slate-700/50">
-                     <img 
-                       src={selectedCertificate.image} 
-                       alt={`${selectedCertificate.title} Certificate`}
-                       className="w-full h-auto object-contain"
-                       style={{
-                         filter: 'brightness(0.95) contrast(1.05)'
-                       }}
-                     />
+                   <div className="relative overflow-hidden rounded-lg border border-slate-700/50 bg-slate-800 min-h-[300px] flex items-center justify-center">
+                     {selectedCertificate.image ? (
+                       <img 
+                         src={selectedCertificate.image} 
+                         alt={`${selectedCertificate.title} Certificate`}
+                         className="w-full h-auto object-contain max-h-[500px]"
+                         style={{
+                           filter: 'brightness(0.95) contrast(1.05)'
+                         }}
+                         onError={(e) => {
+                           console.error('Failed to load certificate image:', selectedCertificate.image);
+                           e.target.style.display = 'none';
+                         }}
+                       />
+                     ) : (
+                       <div className="text-slate-400 text-center p-8">
+                         <p>Certificate image not available</p>
+                       </div>
+                     )}
                    </div>
                  </div>
 
@@ -469,10 +506,11 @@ const Certifications = () => {
                >
                  Close
                </button>
-             </div>
-           </div>
-         </div>
-       )}
+                           </div>
+            </div>
+          </div>,
+          document.body
+        )}
      </section>
    )
  }
