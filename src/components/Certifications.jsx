@@ -204,7 +204,7 @@ const Certifications = () => {
       date: "2024",
       description: "Completed comprehensive virtual job simulation covering technology consulting and digital transformation.",
       icon: "🏆",
-      image: "/public/Deloite.jpg"
+      image: "/src/assets/Deloite.jpg"
     },
     {
       title: "ApnaCollege Sigma 5.0 Batch",
@@ -212,7 +212,7 @@ const Certifications = () => {
       date: "2024",
       description: "Student of ApnaCollege in Sigma 5.0 batch where I learnt core concepts of DSA, Web Development, Aptitude and Reasoning.",
       icon: "🎓",
-      image: "/public/ApnaCollege.jpg"
+      image: "/src/assets/ApnaCollege.jpg"
     },
     {
       title: "Meta Frontend Development",
@@ -220,7 +220,7 @@ const Certifications = () => {
       date: "2024",
       description: "Learnt Frontend basics with hands-on experience. This was taught by the Meta staff.",
       icon: "📱",
-      image: "/public/MetaFrontend.jpg"
+      image: "/src/assets/MetaFrontend.jpg"
     },
     {
       title: "Meta JavaScript Programming",
@@ -228,7 +228,7 @@ const Certifications = () => {
       date: "2024",
       description: "Learnt core concepts of Programming in JavaScript and Jest. This was taught by the Meta.",
       icon: "📜",
-      image: "/public/MetaJavaScript.jpg"
+      image: "/src/assets/MetaJavaScript.jpg"
     },
     {
       title: "Smart India Hackathon Participation",
@@ -236,7 +236,7 @@ const Certifications = () => {
       date: "2024",
       description: "Participated in Smart India Hackathon and tried to solve a problem statement on Travel & Tourism.",
       icon: "🚀",
-      image: "/public/SIH.jpg"
+      image: "/src/assets/SIH.jpg"
     },
     {
       title: "Smart Interviews Training",
@@ -244,7 +244,7 @@ const Certifications = () => {
       date: "2024",
       description: "I'm the student at Smart Interviews. Where I have learnt DSA and Problem Solving. I have Solved Many problems during the training.",
       icon: "🎯",
-      image: "/public/SI.jpg"
+      image: "/src/assets/SI.jpg"
     }
   ]
 
