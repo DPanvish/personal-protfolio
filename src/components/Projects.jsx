@@ -315,10 +315,10 @@ const Projects = () => {
               {/* Animated background glow */}
               <div 
                 className="card-glow absolute inset-0 opacity-0 transition-opacity duration-300"
-                                  style={{
-                    background: 'radial-gradient(circle at center, rgba(139, 92, 246, 0.18) 0%, transparent 70%)',
-                    transform: 'scale(1)'
-                  }}
+                style={{
+                  background: 'radial-gradient(circle at center, rgba(139, 92, 246, 0.18) 0%, transparent 70%)',
+                  transform: 'scale(1)'
+                }}
               />
               
               {/* Optimized particle background effect - reduced count */}
@@ -337,7 +337,7 @@ const Projects = () => {
               </div>
 
               {/* Gradient border effect */}
-                              <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-purple-400/20 via-transparent to-violet-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-purple-400/20 via-transparent to-violet-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
               {/* Project Image */}
               <div className="relative h-48 overflow-hidden">
