@@ -255,31 +255,31 @@ const Projects = () => {
       description: "An AI-powered tool built with React and Gemini API to scan and analyze resume content.",
       image: "🔍",
       liveUrl: "#",
-      codeUrl: "#",
+      codeUrl: "https://github.com/DPanvish/resume-analyzer",
       tech: ["React.js", "TypeScript", "Tailwind CSS", "Shadcn"]
     },
     {
       title: "Gericht Restaurant",
       description: "A fully responsive, single-page website for a fine-dining restaurant using React.js.",
       image: "🍽️",
-      liveUrl: "#",
-      codeUrl: "#",
+      liveUrl: "https://gerichthotels.netlify.app",
+      codeUrl: "https://github.com/DPanvish/gericht-restaurant",
       tech: ["React.js", "CSS", "Responsive Design"]
     },
     {
       title: "GPT-3 Landing Page",
       description: "A modern UI/UX landing page built with React showcasing cutting-edge design principles.",
       image: "🤖",
-      liveUrl: "#",
-      codeUrl: "#",
+      liveUrl: "https://gptface.netlify.app/",
+      codeUrl: "https://github.com/DPanvish/GPT3",
       tech: ["React", "Modern UI/UX"]
     },
     {
       title: "Mensplore",
       description: "An eCommerce front-end using HTML, CSS, and JavaScript for men's fashion.",
       image: "🛍️",
-      liveUrl: "#",
-      codeUrl: "#",
+      liveUrl: "https://dpanvish.github.io/Mensplore.github.io/",
+      codeUrl: "https://github.com/DPanvish/Mensplore.github.io",
       tech: ["HTML", "CSS", "JavaScript"]
     }
   ]
@@ -372,12 +372,16 @@ const Projects = () => {
                 <div className="flex gap-4">
                   <a
                     href={project.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="project-btn flex-1 px-4 py-2 bg-gradient-to-r from-purple-500 to-violet-500 hover:from-purple-600 hover:to-violet-600 text-white font-medium rounded-lg text-center transition-all duration-300 transform hover:scale-105"
                   >
                     Live Demo
                   </a>
                   <a
                     href={project.codeUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="project-btn flex-1 px-4 py-2 border border-purple-500 text-purple-400 hover:bg-purple-500 hover:text-white font-medium rounded-lg text-center transition-all duration-300 transform hover:scale-105"
                   >
                     View Code
