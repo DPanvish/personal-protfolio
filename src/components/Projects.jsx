@@ -256,7 +256,7 @@ const Projects = () => {
       image: "🔍",
       liveUrl: "#",
       codeUrl: "#",
-      tech: ["React", "Gemini API", "AI"]
+      tech: ["React.js", "TypeScript", "Tailwind CSS", "Shadcn"]
     },
     {
       title: "Gericht Restaurant",
@@ -264,7 +264,7 @@ const Projects = () => {
       image: "🍽️",
       liveUrl: "#",
       codeUrl: "#",
-      tech: ["React", "Responsive Design"]
+      tech: ["React.js", "CSS", "Responsive Design"]
     },
     {
       title: "GPT-3 Landing Page",
