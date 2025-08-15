@@ -211,6 +211,22 @@ const Certifications = () => {
       image: "/src/assets/MetaFrontend.jpg"
     },
     {
+      title: "Meta JavaScript Programming",
+      issuer: "Meta",
+      date: "2024",
+      description: "Learnt core concepts of Programming in JavaScript and Jest. This was taught by the Meta.",
+      icon: "📜",
+      image: "/src/assets/MetaJavaScript.jpg"
+    },
+    {
+      title: "Smart India Hackathon Participation",
+      issuer: "SIH",
+      date: "2024",
+      description: "Participated in Smart India Hackathon and tried to solve a problem statement on Travel & Tourism.",
+      icon: "🚀",
+      image: "/src/assets/SIH.jpg"
+    },
+    {
       title: "Web Development Fundamentals",
       issuer: "Coursera",
       date: "2023",
