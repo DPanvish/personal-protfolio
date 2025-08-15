@@ -77,6 +77,7 @@ const Navigation = () => {
     { name: 'About', href: '#about' },
     { name: 'Projects', href: '#projects' },
     { name: 'Skills', href: '#skills' },
+    { name: 'Certifications', href: '#certifications' },
     { name: 'Contact', href: '#contact' }
   ]
 
@@ -105,10 +106,10 @@ const Navigation = () => {
               <a
                 key={item.name}
                 href={item.href}
-                className="nav-item relative text-slate-300 hover:text-cyan-400 transition-colors duration-300 group"
+                className="nav-item relative text-slate-300 hover:text-purple-400 transition-colors duration-300 group"
               >
                 {item.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-teal-500 transition-all duration-300 group-hover:w-full"></span>
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-400 to-violet-500 transition-all duration-300 group-hover:w-full"></span>
               </a>
             ))}
           </div>

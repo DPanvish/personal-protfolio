@@ -11,25 +11,25 @@ const Hero = () => {
   useEffect(() => {
     const tl = gsap.timeline()
 
-    // Create simplified floating background elements
+    // Optimized floating background elements - reduced count and complexity
     const floatingElements = floatingElementsRef.current
     if (floatingElements) {
-      // Create fewer, simpler floating shapes
-      for (let i = 0; i < 4; i++) {
+      // Create only 2 floating shapes for better performance
+      for (let i = 0; i < 2; i++) {
         const element = document.createElement('div')
-        element.className = 'absolute w-1 h-1 bg-cyan-400/20 rounded-full'
+        element.className = 'absolute w-1 h-1 bg-purple-400/15 rounded-full'
         element.style.left = Math.random() * 100 + '%'
         element.style.top = Math.random() * 100 + '%'
         floatingElements.appendChild(element)
         
-        // Simpler floating animation
+        // Optimized floating animation with simpler easing
         gsap.to(element, {
-          y: -50,
-          x: Math.random() * 100 - 50,
-          duration: Math.random() * 8 + 12,
+          y: -30,
+          x: Math.random() * 60 - 30,
+          duration: 8 + (i * 2),
           repeat: -1,
-          ease: "none",
-          delay: i * 1,
+          ease: "power1.inOut",
+          delay: i * 0.5,
         })
       }
     }
@@ -107,12 +107,12 @@ const Hero = () => {
       })
     })
 
-    // Simplified floating animation to contact info
+    // Optimized floating animation to contact info - reduced frequency
     const contactInfo = containerRef.current?.querySelector('.contact-info')
     if (contactInfo) {
       gsap.to(contactInfo, {
-        y: -5,
-        duration: 3,
+        y: -3,
+        duration: 4,
         repeat: -1,
         yoyo: true,
         ease: "power1.inOut"
@@ -128,9 +128,9 @@ const Hero = () => {
   }, [])
 
   const socialLinks = [
-    { name: 'GitHub', url: 'https://github.com', icon: '🐙' },
+    { name: 'GitHub', url: 'https://github.com', icon: '🔗' },
     { name: 'LinkedIn', url: 'https://linkedin.com', icon: '💼' },
-    { name: 'LeetCode', url: 'https://leetcode.com', icon: '⚡' }
+    { name: 'LeetCode', url: 'https://leetcode.com', icon: '🧮' }
   ]
 
   return (
@@ -146,6 +146,23 @@ const Hero = () => {
       />
       
       <div className="text-center px-4 relative z-10">
+        {/* Profile Picture */}
+        <div className="mb-12 flex justify-center">
+          <div className="relative group">
+            <div className="w-40 h-40 md:w-48 md:h-48 lg:w-56 lg:h-56 rounded-full overflow-hidden border-4 border-purple-400/40 shadow-2xl group-hover:border-purple-400/80 transition-all duration-500">
+              <img 
+                src="/src/assets/Image.jpg" 
+                alt="Panvish Dowripilli" 
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+            {/* Enhanced glow effect */}
+            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-purple-400/30 to-violet-400/30 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10 scale-110"></div>
+            {/* Additional outer glow */}
+            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-purple-500/10 to-violet-500/10 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 -z-20 scale-125"></div>
+          </div>
+        </div>
+
         {/* Name with optimized letter-by-letter animation */}
         <h1 
           ref={nameRef}
@@ -156,7 +173,7 @@ const Hero = () => {
               key={index} 
               className="name-letter inline-block"
               style={{ 
-                background: letter === ' ' ? 'transparent' : 'linear-gradient(135deg, #06b6d4 0%, #14b8a6 100%)',
+                background: letter === ' ' ? 'transparent' : 'linear-gradient(135deg, #8b5cf6 0%, #a855f7 50%, #c084fc 100%)',
                 WebkitBackgroundClip: letter === ' ' ? 'unset' : 'text',
                 WebkitTextFillColor: letter === ' ' ? 'white' : 'transparent',
                 backgroundClip: letter === ' ' ? 'unset' : 'text'
@@ -177,8 +194,8 @@ const Hero = () => {
 
         {/* Contact Info with floating animation */}
         <div className="contact-info text-slate-400 mb-8 space-y-2">
-          <p className="text-lg hover:text-cyan-400 transition-colors duration-300">panvishd@gmail.com</p>
-          <p className="text-lg hover:text-cyan-400 transition-colors duration-300">8639460413</p>
+          <p className="text-lg hover:text-purple-400 transition-colors duration-300">panvishd@gmail.com</p>
+          <p className="text-lg hover:text-purple-400 transition-colors duration-300">8639460413</p>
         </div>
 
         {/* Simplified Social Links */}
@@ -192,7 +209,7 @@ const Hero = () => {
               href={social.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="social-icon text-3xl hover:text-cyan-400 transition-colors duration-300 cursor-pointer"
+              className="social-icon text-3xl hover:text-purple-400 transition-colors duration-300 cursor-pointer"
               title={social.name}
             >
               {social.icon}
@@ -200,12 +217,7 @@ const Hero = () => {
           ))}
         </div>
 
-        {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <div className="w-6 h-10 border-2 border-cyan-400 rounded-full flex justify-center">
-            <div className="w-1 h-3 bg-cyan-400 rounded-full mt-2 animate-pulse"></div>
-          </div>
-        </div>
+
       </div>
     </section>
   )
